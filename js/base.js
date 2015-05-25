@@ -1,7 +1,13 @@
 //36Kr Next
-qwest.get('http://node-read.avosapps.com/next').then(function(res){
+// qwest.get('http://node-read.avosapps.com/next').then(function(res){
+//   next.lists = JSON.parse(res);
+// })
+
+var feedUrl = "http://128.199.226.102:3000/feed";
+qwest.get(feedUrl + "?url=https://next.36kr.com/feed").then(function(res) {
   next.lists = JSON.parse(res);
-})
+});
+
 var next = new Vue({
   el: '#next',
   data: {
