@@ -3,7 +3,7 @@
 //   next.lists = JSON.parse(res);
 // })
 
-var feedUrl = "http://dev.node-feed.avosapps.com/feed";
+var feedUrl = "http://node-feed.avosapps.com/feed";
 qwest.get(feedUrl + "?url=https://next.36kr.com/feed").then(function(res) {
   next.lists = JSON.parse(res);
 });
