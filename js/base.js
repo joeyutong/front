@@ -17,10 +17,13 @@ var next = new Vue({
   }
 })
 
-//Hacker News
-qwest.get('http://node-read.avosapps.com/hackernews').then(function(res){
+//Hacker News -> ruanyifeng's blog
+// qwest.get('http://node-read.avosapps.com/hackernews').then(function(res){
+//   hackernews.lists = JSON.parse(res);
+// })
+qwest.get(feedUrl + "?url=http://feeds.feedburner.com/ruanyifeng").then(function (res) {
   hackernews.lists = JSON.parse(res);
-})
+});
 var hackernews = new Vue({
   el: '#hackernews',
   data: {
@@ -30,10 +33,13 @@ var hackernews = new Vue({
   }
 })
 
-//V2EX
-qwest.get('http://node-read.avosapps.com/v2ex').then(function(res){
+//V2EX -> codefinw's blog
+// qwest.get('http://node-read.avosapps.com/v2ex').then(function(res){
+//   v2ex.lists = JSON.parse(res);
+// })
+qwest.get(feedUrl + "?url=http://codefine.co/feed/").then(function (res) {
   v2ex.lists = JSON.parse(res);
-})
+});
 var v2ex = new Vue({
   el: '#v2ex',
   data: {
@@ -43,8 +49,11 @@ var v2ex = new Vue({
   }
 })
 
-//toutiao
-qwest.get('http://node-read.avosapps.com/toutiao').then(function(res){
+//toutiao -> calvin's blog
+// qwest.get('http://node-read.avosapps.com/toutiao').then(function(res){
+//   toutiao.lists = JSON.parse(res);
+// })
+qwest.get(feedUrl + "?url=http://calvin1978.blogcn.com/feed").then(function (res) {
   toutiao.lists = JSON.parse(res);
 })
 var toutiao = new Vue({
