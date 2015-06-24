@@ -18,11 +18,11 @@ var next = new Vue({
   }
 })
 
-//Hacker News -> I Code it
+// Hacker News -> 廖雪峰的博客
 // qwest.get('http://node-read.avosapps.com/hackernews').then(function(res){
 //   hackernews.lists = JSON.parse(res);
 // })
-qwest.get(feedUrl + "?url=http://icodeit.org/atom.xml").then(function (res) {
+qwest.get(feedUrl + "?url=http://www.liaoxuefeng.com/feed").then(function (res) {
   hackernews.lists = JSON.parse(res);
 });
 var hackernews = new Vue({
@@ -66,16 +66,15 @@ var toutiao = new Vue({
   }
 })
 
-// xitugold -> coolshell.cn
-// qwest.get('http://node-read.avosapps.com/xitugold').then(function(res){
-//   xitugold.lists = JSON.parse(res);
-//   console.log(JSON.parse(res))
-// })
-// })
-
-qwest.get(feedUrl + "?url=http://coolshell.cn/feed").then(function (res) {
+//xitugold
+qwest.get('http://node-read.avosapps.com/xitugold').then(function(res){
   xitugold.lists = JSON.parse(res);
+  console.log(JSON.parse(res))
 })
+
+// qwest.get(feedUrl + "?url=http://foocoder.com/atom.xml").then(function (res) {
+//   xitugold.lists = JSON.parse(res);
+// })
 var xitugold = new Vue({
   el: '#xitugold',
   data: {
