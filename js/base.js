@@ -4,6 +4,7 @@
 // })
 
 var feedUrl = "http://node-feed.avosapps.com/feed";
+
 qwest.get(feedUrl + "?url=https://next.36kr.com/feed").then(function(res) {
   next.lists = JSON.parse(res);
 });
@@ -17,11 +18,11 @@ var next = new Vue({
   }
 })
 
-//Hacker News -> ruanyifeng's blog
+//Hacker News -> I Code it
 // qwest.get('http://node-read.avosapps.com/hackernews').then(function(res){
 //   hackernews.lists = JSON.parse(res);
 // })
-qwest.get(feedUrl + "?url=http://feeds.feedburner.com/ruanyifeng").then(function (res) {
+qwest.get(feedUrl + "?url=http://icodeit.org/atom.xml").then(function (res) {
   hackernews.lists = JSON.parse(res);
 });
 var hackernews = new Vue({
@@ -33,7 +34,7 @@ var hackernews = new Vue({
   }
 })
 
-//V2EX -> codefinw's blog
+//V2EX -> codefine's blog
 // qwest.get('http://node-read.avosapps.com/v2ex').then(function(res){
 //   v2ex.lists = JSON.parse(res);
 // })
@@ -65,10 +66,15 @@ var toutiao = new Vue({
   }
 })
 
-//xitugold
-qwest.get('http://node-read.avosapps.com/xitugold').then(function(res){
+// xitugold -> coolshell.cn
+// qwest.get('http://node-read.avosapps.com/xitugold').then(function(res){
+//   xitugold.lists = JSON.parse(res);
+//   console.log(JSON.parse(res))
+// })
+// })
+
+qwest.get(feedUrl + "?url=http://coolshell.cn/feed").then(function (res) {
   xitugold.lists = JSON.parse(res);
-  console.log(JSON.parse(res))
 })
 var xitugold = new Vue({
   el: '#xitugold',
